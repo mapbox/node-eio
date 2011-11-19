@@ -8,7 +8,7 @@
       "email": "info@developmentseed.org"
     },
     "engines": {
-        "node": "0.4.x"
+        "node": ">=0.4.x"
     },
     "licenses": [{ "type": "BSD" }],
     "main": "./build/default/eio.node"
