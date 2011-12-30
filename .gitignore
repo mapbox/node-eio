@@ -2,3 +2,8 @@
 node_modules
 build
 .lock-wscript
+*.pyc
+eio.node
+tmp
+.svn
+*.svn-base
