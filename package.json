@@ -11,5 +11,11 @@
         "node": ">=0.4.x"
     },
     "licenses": [{ "type": "BSD" }],
-    "main": "./lib/eio"
+    "main": "./lib/eio",
+    "devDependencies": {
+      "mocha": "0.x"
+    },
+    "scripts": {
+      "test": "mocha -R spec"
+    }
 }
