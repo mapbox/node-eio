@@ -2,3 +2,4 @@
 node_modules
 build
 .lock-wscript
+lib/eio.node
