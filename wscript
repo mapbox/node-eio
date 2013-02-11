@@ -19,6 +19,9 @@ def configure(conf):
     linkflags.extend(os.environ['LINKFLAGS'].split(' '))
   conf.env.append_value("LINKFLAGS", linkflags)
 
+  # for eio.h with node >= v0.6
+  conf.env.append_value("CXXFLAGS", '-I'+conf.env['PREFIX']+"/include/node/uv-private")
+
 def build(bld):
   obj = bld.new_task_gen("cxx", "shlib", "node_addon")
   obj.cxxflags = ["-g", "-D_FILE_OFFSET_BITS=64", "-D_LARGEFILE_SOURCE", "-Wall"]
