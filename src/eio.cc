@@ -1,5 +1,6 @@
 #include <v8.h>
 #include <node.h>
+#include <eio.h>
 
 using namespace v8;
 using namespace node;
@@ -45,3 +46,5 @@ extern "C" void init(Handle<Object> target) {
     NODE_SET_METHOD(target, "setMaxParallel", SetMaxParallel);
     NODE_SET_METHOD(target, "usage", Usage);
 }
+
+NODE_MODULE(eio, init);
