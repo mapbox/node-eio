@@ -46,3 +46,5 @@ extern "C" void init(Handle<Object> target) {
     NODE_SET_METHOD(target, "setMaxParallel", SetMaxParallel);
     NODE_SET_METHOD(target, "usage", Usage);
 }
+
+NODE_MODULE(eio, init);
