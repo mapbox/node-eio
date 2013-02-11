@@ -1,5 +1,6 @@
 #include <v8.h>
 #include <node.h>
+#include <eio.h>
 
 using namespace v8;
 using namespace node;
