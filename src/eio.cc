@@ -3,6 +3,7 @@
 #include <node_version.h>
 
 #include <sstream>
+#include <iostream>
 
 using namespace v8;
 using namespace node;
@@ -28,8 +29,9 @@ Handle<Value> SetMinParallel(const Arguments& args) {
     eio_set_min_parallel(args[0]->Uint32Value());
 #else
     std::stringstream s;
-    s << args[0]->Uint32Value();
-    setenv("UV_THREADPOOL_SIZE",s.str().c_str(),0);
+    s << "node-eio has no effect with your node version (" << NODE_VERSION << ")"
+      << " set UV_THREADPOOL_SIZE at startup instead";
+    std::clog << s.str() << "\n";
 #endif
     return scope.Close(Undefined());
 }
@@ -43,8 +45,9 @@ Handle<Value> SetMaxParallel(const Arguments& args) {
     eio_set_max_parallel(args[0]->Uint32Value());
 #else
     std::stringstream s;
-    s << args[0]->Uint32Value();
-    setenv("UV_THREADPOOL_SIZE",s.str().c_str(),0);
+    s << "node-eio has no effect with your node version (" << NODE_VERSION << ")"
+      << " set UV_THREADPOOL_SIZE at startup instead";
+    std::clog << s.str() << "\n";
 #endif
     return scope.Close(Undefined());
 }
