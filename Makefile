@@ -1,4 +1,11 @@
 build:
-	node-waf build
+	npm install
 
-.PHONY: build
+clean:
+	rm -rf build
+	rm -f lib/eio.node
+
+test:
+	npm test
+
+.PHONY: build test clean
