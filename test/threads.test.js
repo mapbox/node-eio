@@ -17,8 +17,13 @@ describe('threads', function() {
     });
 
     it('should allow access to usage', function() {
-        assert.ok(eio.usage().requests !== undefined);
-        assert.ok(eio.usage().active !== undefined);
-        assert.ok(eio.usage().pending !== undefined);
+        var ver = process.versions.node;
+        if (!parseInt(ver.split('.')[1],10) >= 9) {
+            assert.ok(eio.usage().requests !== undefined);
+            assert.ok(eio.usage().active !== undefined);
+            assert.ok(eio.usage().pending !== undefined);
+        } else {
+            console.warn('note: your node version does not support eio so this test is disabled');
+        }
     });
 });
