@@ -11,12 +11,7 @@ using namespace node;
 #if NODE_VERSION_AT_LEAST(0, 9, 4)
     // do nothing
 #else
-    #if NODE_VERSION_AT_LEAST(0, 8, 0)
-        #define LIBUV_HAS_EV
-    #else
-        #define LIBUV_HAS_EV
-        #include <eio.h>
-    #endif
+    #define LIBUV_HAS_EV
 #endif
 
 Handle<Value> SetMinParallel(const Arguments& args) {
