@@ -1,14 +1,18 @@
 {
     "name": "eio",
     "description": "Control libeio from JavaScript",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "author": {
       "name": "Development Seed",
       "url": "http://developmentseed.org/",
       "email": "info@developmentseed.org"
     },
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/developmentseed/node-eio.git"
+    },
     "engines": {
-        "node": ">= 0.6.13 && < 0.11.0"
+        "node": ">= 0.6.13 < 0.11.0"
     },
     "licenses": [{ "type": "BSD" }],
     "main": "./lib/eio",
